@@ -10,7 +10,7 @@ void setup (){
 void loop (){
   val = analogRead(tempPin);
   mv = (val/1024.0)*5000; 
-  temp = mv/10;
+  temp = (mv-750)/10 + 25;
   Serial.print("TEMP: ");
   Serial.print(temp);
   Serial.print("*C");
