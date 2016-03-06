@@ -58,7 +58,7 @@ void loop() {
     dataString += " = ";
     dataString += String(tempC);
 
-    File dataFile = FileSystem.open("/mnt/sd/temp02.txt", FILE_APPEND);
+    File dataFile = FileSystem.open("/mnt/sd/data.txt", FILE_APPEND);
     if (dataFile) {
       // save to file
       dataFile.println(dataString);
