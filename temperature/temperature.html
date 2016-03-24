@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Temperature</title>
+  	<style>
+		@font-face {
+			font-family: 'Junegull';
+			src: url('junegull.ttf'); /* IE9 Compat Modes */
+		}
+  		html, body{
+  			display:inline-block;
+  			height:100%;
+  			width:100%;	
+  			margin:0;
+  			padding:0;
+  			font-family: 'Junegull', Fallback, sans-serif;
+  		}
+  		html{
+  			background-color: white;
+  		}
+  		body{
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffe100+0,00bbff+86 */
+			background: #ffe100; /* Old browsers */
+			background: -moz-linear-gradient(top,  #ffe100 0%, #00bbff 86%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top,  #ffe100 0%,#00bbff 86%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom,  #ffe100 0%,#00bbff 86%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe100', endColorstr='#00bbff',GradientType=0 ); /* IE6-9 */
+  		}
+  		#arduino-cont, #trans-cont, #temp-cont {
+  			display: inline-block;
+  			width:100%;
+  			text-align: center;
+  		}
+  		#temp {
+  			display:inline-block;
+  			height: 500px;
+  			width: 500px;
+  			background-color: white;
+			-webkit-border-radius: 100%;
+			-moz-border-radius: 100%;
+			border-radius: 100%;
+  		}
+  		.hidden{
+  			display:none;
+  		}
+  		.v-align {
+  			display: inline-block;
+  			height: 100%;
+  			width:0;
+  			vertical-align: middle;
+  		}
+  		#temp span{
+  			vertical-align: middle;
+  			font-size: 150px;
+  		}
+
+  		#spinnerContainer
+		{
+			top:-135px;
+			left:50%;
+			margin-left:-107.5px;
+			position:relative;
+			width:215px;
+			height:50px;
+			text-align:center;
+		}
+
+
+  	</style>
+</head>
+<body>
+	<div id="arduino-cont">
+		<img src="http://tavendo.com/static/img/blog/arduino-yun-getting-started-part-1/arduino-yun.jpg" width="100px">
+	</div>
+
+	<div id="trans-cont">
+
+	</div>
+
+	<div id="temp-cont">
+		<div id = "temp">
+			<span id="title" class="hidden">TEMPERATURE</span>
+			<span id="value">22</span><span id="unit"> °C</span>
+			<span class="v-align"></span>
+		</div>
+	</div>
+
+	<div id="spinnerContainer">
+    	<div class="spinDot"></div>
+        <div class="spinDot"></div>
+        <div class="spinDot"></div>
+        <div class="spinDot"></div>
+        <div class="spinDot"></div>
+        <div class="spinDot"></div>
+        <div class="spinDot"></div>
+        <div class="spinDot"></div>
+        <div class="spinDot"></div>
+	</div>
+</body>
+</html>

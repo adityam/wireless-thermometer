@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Wireless Temperature Sensor</title>
+        <meta name="description" content="Displays real-time temperature data obtained from sensor connected to Arduino Yun">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="resources/font-awesome.min.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'>
+        <link href="resources/main.css" rel="stylesheet" >
+        <link href="resources/favicon.ico" rel="icon" type="image/ico">
+        <link href="resources/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+    </head>
+    <body onload="//setInterval(refresh, 1000);">
+
+        <section id="landing" class="no-user-select full-window">
+
+            <div class="background">
+                <div class="landing-progress" id="landing-progress"></div>
+            </div>
+
+            <div class="content">
+                <header><span id="content">Waiting for Arduino...</span>°C</header>
+            </div>
+        </section>
+
+        <section id="stats" class="full-window">
+        </section>
+        <script src="resources/jquery-2.1.1.js"></script>
+        <script src="resources/progressbar.js"></script>
+        <script src="resources/main.js"></script>
+
+        <script type="text/javascript">
+           
+        </script>
+
+
+    </body>
+</html>
+

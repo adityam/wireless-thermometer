@@ -1,0 +1,286 @@
+@charset "UTF-8";
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* PAGE */
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.full-window {
+  height: 100%;
+  width: 100%;
+}
+
+svg {
+  display: block;
+  height: 100%;
+}
+
+header, h1, h2, h3 {
+  color: #fcb03c;
+  font-weight: 100;
+}
+
+p {
+  color: #6e6e6e;
+}
+
+header {
+  font-size: 3em;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin: 20px auto;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin: 10px auto;
+}
+
+h3 {
+  font-size: 1.7em;
+  margin: 10px auto;
+}
+
+a:visited {
+  color: #fcb03c;
+}
+
+a:hover {
+  color: #fcb03c;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #fcb03c;
+}
+
+::selection {
+  background: #07a197;
+}
+
+::-moz-selection {
+  background: #07a197;
+}
+
+.fixed {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  text-align: right;
+  margin: 0 0 0 -23px;
+}
+
+/* TEMPERATURE DISPLAY */
+
+#landing {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  padding-bottom: 100px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00cbff+0,00ff9d+100 */
+background: #00cbff; /* Old browsers */
+background: -moz-linear-gradient(top,  #00cbff 0%, #00ff9d 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #00cbff 0%,#00ff9d 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #00cbff 0%,#00ff9d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00cbff', endColorstr='#00ff9d',GradientType=0 ); /* IE6-9 */
+
+}
+
+#landing .background, #landing .content {
+  -webkit-animation-duration: 600ms;
+  -moz-animation-duration: 600ms;
+  -o-animation-duration: 600ms;
+  animation-duration: 600ms;
+}
+
+#landing .background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+}
+
+#landing .background .landing-progress {
+  transform: translate3d(0, 0, 0);
+  /* Try to enable HW accleration */
+  width: 90%;
+  max-width: 600px;
+}
+
+#landing .content {
+  position: relative;
+  text-align: center;
+  pointer-events: none;
+}
+
+#landing .content header {
+  margin-top: 30px;
+}
+
+#landing .go-down-link {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+#landing .go-down-link img {
+  width: 50px;
+  height: 50px;
+}
+
+.progressbar-text {
+  color: #fcb03c;
+  font-weight: 100;
+}
+
+/* STATS */
+
+#stats {
+  background-color: white;
+}
+
+/* RESPONSIVE */
+
+@media all and (max-width: 600px) {
+  header {
+    font-size: 2.5em;
+  }
+  h1 {
+    font-size: 2.2em;
+  }
+  h2 {
+    font-size: 1.6em;
+  }
+  h3 {
+    font-size: 1.4em;
+  }
+}
+
+@media all and (max-width: 450px) {
+  header {
+    font-size: 2.1em;
+  }
+  h1 {
+    font-size: 1.9em;
+  }
+  h2 {
+    font-size: 1.6em;
+  }
+  h3 {
+    font-size: 1.2em;
+  }
+  p {
+    font-size: 0.9em;
+  }
+}
+
+@media all and (max-width: 330px) {
+  header {
+    font-size: 1.7em;
+  }
+  h1 {
+    font-size: 1.7em;
+  }
+  h2 {
+    font-size: 1.4em;
+  }
+  h3 {
+    font-size: 0.9em;
+  }
+  p {
+    font-size: 0.9em;
+  }
+}
+
