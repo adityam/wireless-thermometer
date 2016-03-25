@@ -44,8 +44,6 @@ void loop() {
     
     if (command == "temperature") {  //Check to see if the first part of the URL command 
     //included the word "temperature" 
-
-
       // Get and convert temperature value
       val = analogRead(tempPin);
       // converting that reading to voltage, which is based off the reference voltage
@@ -58,13 +56,33 @@ void loop() {
       //Send text data to the client (which will interpretted by client as HTML) 
       //using the client.print command: 
       client.print(tempC); //send current temperature in degrees C
-    
     }
-     
-     // Close connection and free resources.
+
+    else if (command == "timestamp") {  //Check to see if the first part of the URL command 
+      client.print(getTimeStamp()); //send current temperature in degrees C
+    }
+    
+    // Close connection and free resources.
     client.stop();
     client.flush();//discard any bytes that have been written to client but not 
     //yet read.
   }      
 
 } 
+
+// Helper method to get current time as String
+String getTimeStamp() {
+  String result;
+  Process time;
+  time.begin("date");
+  time.addParameter("+%D-%T");  
+  time.run(); 
+
+  while(time.available()>0) {
+    char c = time.read();
+    if(c != '\n')
+      result += c;
+  }
+
+  return result;
+}

@@ -33,6 +33,7 @@ function initLanding() {
 
 function refresh() {
     $('#content').load('/arduino/temperature');
+    $('#timestamp').load('/arduino/timestamp');
 }
 
 
