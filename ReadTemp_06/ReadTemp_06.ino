@@ -1,8 +1,9 @@
 #include <Bridge.h>
 #include <YunServer.h>
 #include <YunClient.h>
+#include <FileIO.h>
 
-// tie 3.3V to ARef and measure it with a multimeter
+// tie 3.3V to ARef
 #define aref_voltage 3.3  
 
 //WiFi setup:
@@ -10,11 +11,13 @@
 // will forward there all the HTTP requests for us.
 YunServer server;
 
-
 float val;
 float voltage;
 float tempC;
 int tempPin = 0;
+
+unsigned long previousMillis = 0; 
+long interval = 5000;  
 
 void setup() {
 
@@ -27,10 +30,24 @@ void setup() {
   // (no one from the external network could connect)
   server.listenOnLocalhost();
   server.begin();
+
+  FileSystem.begin();
   
 }
 
 void loop() { 
+
+  /* Get and convert temperature value */
+  
+  val = analogRead(tempPin);
+  // converting that reading to voltage, which is based off the reference voltage
+  voltage = val * aref_voltage;
+  //converting from 10 mv per degree wit 500 mV offset
+  //to degrees ((volatge - 500mV) times 100)
+  voltage /= 1024.0;
+  tempC = (voltage - 0.5) * 100;
+
+  /* SERVING WEB REQUESTS */
   
   // Get clients coming from server
   YunClient client = server.accept();
@@ -42,31 +59,34 @@ void loop() {
     //forward dash "/".
     command.trim();        //kill whitespace
     
-    if (command == "temperature") {  //Check to see if the first part of the URL command 
-    //included the word "temperature" 
-      // Get and convert temperature value
-      val = analogRead(tempPin);
-      // converting that reading to voltage, which is based off the reference voltage
-      voltage = val * aref_voltage;
-      //converting from 10 mv per degree wit 500 mV offset
-      //to degrees ((volatge - 500mV) times 100)
-      voltage /= 1024.0;
-      tempC = (voltage - 0.5) * 100;
-   
-      //Send text data to the client (which will interpretted by client as HTML) 
-      //using the client.print command: 
+    if (command == "temperature") { // if request URL contains "temperature"  
       client.print(tempC); //send current temperature in degrees C
     }
 
-    else if (command == "timestamp") {  //Check to see if the first part of the URL command 
-      client.print(getTimeStamp()); //send current temperature in degrees C
+    else if (command == "timestamp") {  // if request URL contains "timestamp"
+      client.print(getTimeStamp());
     }
     
     // Close connection and free resources.
     client.stop();
-    client.flush();//discard any bytes that have been written to client but not 
-    //yet read.
-  }      
+    client.flush();//discard any bytes that have been written to client but not yet read.
+  }
+
+  /* SAVING TO SD CARD */
+
+  unsigned long currentMillis = millis();
+  
+  if(currentMillis - previousMillis > interval) {
+    
+    previousMillis = currentMillis;  
+
+    // Log on SD card
+    String dataString = "";
+    dataString += getTimeStamp();
+    dataString += " = ";
+    dataString += String(tempC);
+    saveToFile(dataString);
+  }
 
 } 
 
@@ -83,6 +103,16 @@ String getTimeStamp() {
     if(c != '\n')
       result += c;
   }
-
   return result;
 }
+
+// Helper method to append String to a file
+void saveToFile(String content){
+    File dataFile = FileSystem.open("/mnt/sd/data.txt", FILE_APPEND);
+    if (dataFile) {
+      // save to file
+      dataFile.println(content);
+      dataFile.close();
+    }
+}
+
