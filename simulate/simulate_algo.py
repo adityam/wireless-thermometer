@@ -1,3 +1,5 @@
+import os.path
+
 # Run simulation of transmission algorithm
 # Using collected temperature data saved in source file
 # Alpha and K_alpha are algorithm parameters
@@ -13,6 +15,13 @@ def simulate (alpha, k_alpha):
         results = open('sim_alpha_'+str(alpha)+'.txt', 'w+')
         results.write('alpha   = ' + str(alpha) +'\nk_alpha = ' + str(k_alpha) + '\n')
         results.close()
+
+        # Create/open file to store transmission statistics
+        if not(os.path.isfile('sim_tx_stats.txt')):
+            stats = open('sim_tx_stats.txt', 'w+')
+            stats.write('-ALPHA-     -K_ALPHA-     -TX-     -TOTAL-\n')
+        else:
+            stats = open('sim_tx_stats.txt', 'a')
 
         # write simulation results to destination file
         with open('sim_alpha_'+str(alpha)+'.txt', 'a') as results:
@@ -37,7 +46,7 @@ def simulate (alpha, k_alpha):
                     results.write('ES: ' + str(temp) +'\n')
 
             # write transmission statistics to end of destination file
-            results.write('Tx  = ' + str(tx) + '\nTot = ' + str(total))
+            stats.write(str(alpha) + '  ' + str(k_alpha) + '    ' + str(tx) + '    ' + str(total) + '\n')
 
 
 # Run batch simulation for a vector of alpha values & corresponding k_alpha
@@ -49,3 +58,4 @@ with open('alpha_k_alpha.csv') as parameters:
         print 'Simulating... alpha = ' + pair[0] +', k_alpha = '+ pair[1]
         #run simulation
         simulate (float(pair[0]), float(pair[1]))
+    print 'DONE!'
