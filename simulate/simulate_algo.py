@@ -19,7 +19,7 @@ def simulate (alpha, k_alpha):
         # Create/open file to store transmission statistics
         if not(os.path.isfile('sim_tx_stats.txt')):
             stats = open('sim_tx_stats.txt', 'w+')
-            stats.write('-ALPHA-     -K_ALPHA-     -TX-     -TOTAL-\n')
+            stats.write('-ALPHA-     -K_ALPHA-     -TX-     -TOTAL-     -RATIO-\n')
         else:
             stats = open('sim_tx_stats.txt', 'a')
 
@@ -46,7 +46,7 @@ def simulate (alpha, k_alpha):
                     results.write('ES: ' + str(temp) +'\n')
 
             # write transmission statistics to end of destination file
-            stats.write(str(alpha) + '  ' + str(k_alpha) + '    ' + str(tx) + '    ' + str(total) + '\n')
+            stats.write(str(alpha) + '  ' + str(k_alpha) + '    ' + str(tx) + '    ' + str(total) + '    ' + str(float(tx)/float(total)) +'\n')
 
 
 # Run batch simulation for a vector of alpha values & corresponding k_alpha
