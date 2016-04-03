@@ -1,13 +1,10 @@
 # Reference Material
 
-\n
-
 #### Arduino Yun Disk Space Expander
 
   **Usage:** Formatting MicroSD card for data storage on Arduino Yun
 
   [Source](https://www.arduino.cc/en/Tutorial/ExpandingYunDiskSpace)
-
 
 #### Arduino Yun PLotly API
 
@@ -20,12 +17,28 @@
  **Usage:** User interface and web design materials for Arduino Yun web server
 
  [Source](http://kimmobrunfeldt.github.io/progressbar.js/)
+ 
+#### Arduino Yun Webserver
 
+ **Usage:** Reference material for setting up webserver page on Arduino Yun
 
-http://aaronscher.com/Arduino_tutorials/Arduino_WiFi_Tutorial/arduinoyunwifi.html
+ [Source](http://aaronscher.com/Arduino_tutorials/Arduino_WiFi_Tutorial/arduinoyunwifi.html)
 
-http://scuola.arduino.cc/lesson/zzdeJ3m/YunServer_Sensor_values_to_HTML_page
+#### Arduino Yun Webserver 2
 
-http://paulbourke.net/miscellaneous/ar/
+ **Usage:** Reference material for setting up webserver page on Arduino Yun
 
-http://www.mathworks.com/matlabcentral/fileexchange/21383-rmse/content/rmse.m
+ [Source](http://scuola.arduino.cc/lesson/zzdeJ3m/YunServer_Sensor_values_to_HTML_page)
+
+#### Parameters of Autoregressive Processes
+
+ **Usage:** Reference material and scripts for finding parameters for modelling data of autoregressive process
+
+ [Source](http://paulbourke.net/miscellaneous/ar/)
+ 
+#### MATLAB Root Mean Square Error
+
+ **Usage:** MATLAB function for finding RMSE of dataset
+
+ [Source](http://www.mathworks.com/matlabcentral/fileexchange/21383-rmse/content/rmse.m)
+ 
