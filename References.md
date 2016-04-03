@@ -8,14 +8,16 @@
 
 #### Arduino Yun PLotly API
 
-**Usage:** Graphing real-time data obtained by Arduino Yun
+ **Usage:** Graphing real-time data obtained by Arduino Yun
 
-[Source](https://github.com/plotly/arduino-api)
+ [Source](https://github.com/plotly/arduino-api)
 
-Plotly_Yun
+#### ProgressBar.js
 
-ProgressBar.js
-http://kimmobrunfeldt.github.io/progressbar.js/
+ **Usage:** User interface and web design materials for Arduino Yun web server
+
+ [Source](http://kimmobrunfeldt.github.io/progressbar.js/)
+
 
 http://aaronscher.com/Arduino_tutorials/Arduino_WiFi_Tutorial/arduinoyunwifi.html
 
