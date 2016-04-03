@@ -1,13 +1,11 @@
 # Reference Material
 
-## YunDiskSpaceExpander
-
 ## Arduino Yun Disk Space Expander
 
 Usage: Formatting MicroSD card for data storage on Arduino Yun
 
 Source:
-	https://www.arduino.cc/en/Tutorial/ExpandingYunDiskSpace
+Visit https://www.arduino.cc/en/Tutorial/ExpandingYunDiskSpace
 
 Plotly_Yun
 
