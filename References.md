@@ -6,7 +6,7 @@
 
   [Source](https://www.arduino.cc/en/Tutorial/ExpandingYunDiskSpace)
 
-#### Arduino Yun PLotly API
+#### Arduino Yun Plotly API
 
  **Usage:** Graphing real-time data obtained by Arduino Yun
 
