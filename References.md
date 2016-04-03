@@ -4,7 +4,6 @@
 
 Usage: Formatting MicroSD card for data storage on Arduino Yun
 
-Source:
 Visit https://www.arduino.cc/en/Tutorial/ExpandingYunDiskSpace
 
 Plotly_Yun
