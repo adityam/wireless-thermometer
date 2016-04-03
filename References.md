@@ -18,27 +18,27 @@
 
  [Source](http://kimmobrunfeldt.github.io/progressbar.js/)
  
-#### Arduino Yun Webserver
+#### Arduino Yun Webserver Tutorial
 
- **Usage:** Reference material for setting up webserver page on Arduino Yun
+ **Usage:** Setting up webserver page on Arduino Yun
 
  [Source](http://aaronscher.com/Arduino_tutorials/Arduino_WiFi_Tutorial/arduinoyunwifi.html)
 
-#### Arduino Yun Webserver 2
+#### Arduino Yun Webserver Tutorial 2
 
- **Usage:** Reference material for setting up webserver page on Arduino Yun
+ **Usage:** Setting up webserver page on Arduino Yun
 
  [Source](http://scuola.arduino.cc/lesson/zzdeJ3m/YunServer_Sensor_values_to_HTML_page)
 
 #### Parameters of Autoregressive Processes
 
- **Usage:** Reference material and scripts for finding parameters for modelling data of autoregressive process
+ **Usage:** Finding parameters for modelling data of autoregressive process
 
  [Source](http://paulbourke.net/miscellaneous/ar/)
  
-#### MATLAB Root Mean Square Error
+#### MATLAB Root Mean Square Error Function
 
- **Usage:** MATLAB function for finding RMSE of dataset
+ **Usage:** Finding RMSE of dataset
 
  [Source](http://www.mathworks.com/matlabcentral/fileexchange/21383-rmse/content/rmse.m)
  
