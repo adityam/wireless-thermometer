@@ -1,10 +1,16 @@
 # Reference Material
 
-#### [Source](https://www.arduino.cc/en/Tutorial/ExpandingYunDiskSpace) Arduino Yun Disk Space Expander
+#### Arduino Yun Disk Space Expander
 
 **Usage:** Formatting MicroSD card for data storage on Arduino Yun
 
+[Source](https://www.arduino.cc/en/Tutorial/ExpandingYunDiskSpace)
 
+#### Arduino Yun PLotly API
+
+**Usage:** Graphing real-time data obtained by Arduino Yun
+
+[Source](https://github.com/plotly/arduino-api)
 
 Plotly_Yun
 
