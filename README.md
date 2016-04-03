@@ -1,4 +1,4 @@
-# Wireless Thermometer on Arduino Yun
+# Wireless Thermometer for Arduino Yun
 
 ## Synopsis
 
