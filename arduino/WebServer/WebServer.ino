@@ -16,6 +16,20 @@ float voltage;
 float tempC;
 int tempPin = 0;
 
+// algorithm parameters
+const float A = 0.9999;
+const float K_ALPHA = 0.00959410785; // alpha = 0.34
+
+int requestCount = 0;
+int txCount = 0;
+float tempPrev = -1;
+String lastTxTime = "no tx";
+float error = 0;
+float dist = 0;
+
+float printTemp;
+String estimateFlag;
+
 unsigned long previousMillis = 0; 
 long interval = 5000;  
 
@@ -60,7 +74,33 @@ void loop() {
     command.trim();        //kill whitespace
     
     if (command == "temperature") { // if request URL contains "temperature"  
-      client.print(tempC); //send current temperature in degrees C
+      error = abs(tempC - A * tempPrev);
+      if (error > K_ALPHA || requestCount == 0){
+        txCount++;
+        printTemp = tempC;
+        lastTxTime = getTimeStamp();
+        estimateFlag = "t";
+      }
+      else {
+        printTemp = tempPrev * A;
+        dist += pow(error,2);
+        estimateFlag = "e";
+      }
+      tempPrev = tempC;
+      requestCount++;
+      client.print(estimateFlag);
+      client.print(",");
+      client.print(printTemp);
+      client.print(",");
+      client.print(lastTxTime);
+      client.print(",");
+      client.print(txCount);
+      client.print(",");
+      client.print(requestCount);
+      client.print(",");
+      client.print(dist);
+      
+      //send current temperature in degrees C
     }
 
     else if (command == "timestamp") {  // if request URL contains "timestamp"

@@ -32,8 +32,20 @@ function initLanding() {
 }
 
 function refresh() {
-    $('#content').load('/arduino/temperature');
-    $('#timestamp').load('/arduino/timestamp');
+    $.get("/arduino/temperature", function(data, status){
+        if(status == "success"){
+            var update = data.split(",");
+            $("#temp").text(update[1]+"°C");
+            $("#timestamp").text(update[2]);
+            $("#tx").text(update[3]+"/"+update[4]);
+            $("#dist").text(update[5]);
+        }
+        else {
+            console.log('Failed to retrieve data from "/arduino/temperature".');
+        }
+    });
+    //$('#content').load('/arduino/temperature');
+    //$('#timestamp').load('/arduino/timestamp');
 }
 
 

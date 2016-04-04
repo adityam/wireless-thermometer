@@ -239,13 +239,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00cbff', end
   text-align: center;
 }
 
-#stats:nth-child(1) {
-  background-color: pink;
-}
-
 .box .text {
   display: inline-block;
   vertical-align: middle;
+  max-width: 275px;
 }
 
 .box .label {
@@ -319,6 +316,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00cbff', end
     .box {
       width:100%;
       height: 25%;
+    }
+  }
+
+
+  /* stats */
+  @media screen and (min-width: 1000px){
+    #stats {
+      position: absolute;
+      top: 0;
+      background-color: transparent;
+    }
+
+    .box:nth-of-type(odd) .text {
+      text-align: center;
+      margin-right: 50%;
+    }
+
+    .box:nth-of-type(even) .text {
+      text-align: center;
+      margin-left: 50%;
+    }
+
+    .box .text header{
+      color:white;
     }
   }
 
