@@ -258,6 +258,45 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00cbff', end
   content: "";
 }
 
+/* Battery */
+
+.ui-batt {
+    width:44px;
+    height:17px;
+    border: 5px solid white;
+    position: relative;
+}
+.ui-batt-point {
+    display: block;
+    background: white;
+    width:4px;
+    height:13px;
+    position: absolute;
+    left:49px;
+    top: 2px;
+}
+.ui-batt-text {
+    content: attr(data-level)"%";
+    color: white;
+    position: absolute;
+    left: 60px;
+    width:20px;
+    font-family: Tahoma;
+    font-size: 22px;
+    top: -4px;
+}
+.ui-batt-level {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: white;
+    width:40px;
+    height:13px;
+}
+.ui-batt.ui-batt-level-a .ui-batt-level {
+    background: red;
+}
+
 /* RESPONSIVE */
 
 @media all and (max-width: 600px) {
@@ -342,4 +381,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00cbff', end
       color:white;
     }
   }
+
 

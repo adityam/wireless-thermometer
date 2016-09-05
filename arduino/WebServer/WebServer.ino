@@ -83,7 +83,7 @@ void loop() {
       }
       else {
         printTemp = tempPrev * A;
-        dist += pow(error,2);
+        dist += error * 1000;
         estimateFlag = "e";
       }
       tempPrev = tempC;
@@ -98,7 +98,8 @@ void loop() {
       client.print(",");
       client.print(requestCount);
       client.print(",");
-      client.print(dist);
+      client.print(dist/requestCount);
+      client.print("e-4");
       
       //send current temperature in degrees C
     }
